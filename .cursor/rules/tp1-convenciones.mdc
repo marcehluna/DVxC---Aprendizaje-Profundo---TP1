@@ -1,0 +1,38 @@
+---
+description: TP1 notebooks: Colab, celdas+markdown, legibilidad, español, SciPy; consultar dudas y otras libs
+globs: "**/*.ipynb"
+alwaysApply: false
+---
+
+# Convenciones del proyecto TP1
+
+Ámbito: notebooks (`.ipynb`) de este repositorio.
+
+## Decisiones que afectan el resultado
+
+- Ante **cualquier duda** o **decisión** (hipótesis, parámetros, criterio de implementación, interpretación del enunciado, etc.) que **pueda afectar el resultado** del ejercicio, **preguntar al usuario antes** de seguir; no avanzar asumiendo por cuenta propia en esos casos.
+
+## Legibilidad
+
+- El código debe ser **legible** y **fácil de entender**: nombres claros, funciones con una responsabilidad principal, evitar magia innecesaria y duplicación confusa.
+- Preferí claridad sobre brevedad cuando choquen.
+
+## Idioma de los comentarios
+
+- **Todos los comentarios** (incluidos docstrings y comentarios de bloque o línea) deben estar **en español**.
+- Los identificadores de código (nombres de variables, funciones, clases) pueden seguir el estilo ya usado en el repo si conviene consistencia con bibliotecas o el enunciado.
+
+## Notebook y Google Colab
+
+- El notebook debe poder **ejecutarse en Google Colab** (Python del runtime de Colab, sin depender de rutas o archivos solo de tu máquina salvo que el propio notebook indique cómo subirlos o montarlos de forma compatible con Colab).
+- El contenido debe estar **organizado en celdas** de forma clara (separar imports, definiciones, entrenamiento, evaluación, etc., en celdas acordes).
+- **Antes de cada celda de código**, debe existir una celda de **markdown en español** que explique **qué hace** la celda de código que sigue y **qué se espera como resultado** (por ejemplo: variables definidas, valores impresos, forma de arrays, métricas, archivos generados).
+
+## Dependencias permitidas
+
+- Para bibliotecas de terceros el trabajo numérico debe hacerse **solo con SciPy**, además de la **biblioteca estándar** de Python.
+- **NumPy** está permitido solo en lo inevitable para **arrays** (`numpy.ndarray`) y operaciones que SciPy usa o espera como entrada/salida; priorizá **SciPy** cuando exista alternativa allí.
+- **No** usar **Matplotlib** ni otras bibliotecas de visualización o cálculo “similares” fuera de SciPy.
+- **No** usar **PyTorch**, **TensorFlow**, **JAX** ni otros **frameworks de aprendizaje profundo** que ya incluyan optimizadores, autograd o bloques de red listos para entrenar modelos.
+- La implementación del modelo y del entrenamiento debe hacerse **a mano** con lo permitido (sin delegar en APIs de alto nivel tipo `torch.optim`, `keras.optimizers`, etc.).
+- Si hace falta **cualquier otra dependencia** (paquete pip, módulo que no sea biblioteca estándar ni lo ya autorizado arriba), **preguntar al usuario antes** si su uso está permitido; no agregarla ni recomendarla sin esa confirmación.
