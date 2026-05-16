@@ -1,5 +1,5 @@
 ---
-description: TP1 notebooks: Colab, celdas+markdown, legibilidad, español, SciPy; consultar dudas y otras libs
+description: TP1 notebooks: Colab, celdas+markdown, legibilidad, español; P1 SciPy a mano; P2 PyTorch permitido
 globs: "**/*.ipynb"
 alwaysApply: false
 ---
@@ -30,9 +30,34 @@ alwaysApply: false
 
 ## Dependencias permitidas
 
-- Para bibliotecas de terceros el trabajo numérico debe hacerse **solo con SciPy**, además de la **biblioteca estándar** de Python.
-- **NumPy** está permitido solo en lo inevitable para **arrays** (`numpy.ndarray`) y operaciones que SciPy usa o espera como entrada/salida; priorizá **SciPy** cuando exista alternativa allí.
-- **No** usar **Matplotlib** ni otras bibliotecas de visualización o cálculo “similares” fuera de SciPy.
-- **No** usar **PyTorch**, **TensorFlow**, **JAX** ni otros **frameworks de aprendizaje profundo** que ya incluyan optimizadores, autograd o bloques de red listos para entrenar modelos.
-- La implementación del modelo y del entrenamiento debe hacerse **a mano** con lo permitido (sin delegar en APIs de alto nivel tipo `torch.optim`, `keras.optimizers`, etc.).
-- Si hace falta **cualquier otra dependencia** (paquete pip, módulo que no sea biblioteca estándar ni lo ya autorizado arriba), **preguntar al usuario antes** si su uso está permitido; no agregarla ni recomendarla sin esa confirmación.
+Las reglas dependen de la sección del TP. Cuando el usuario **pida explícitamente** usar PyTorch u otra biblioteca concreta **fuera de Pregunta 1** (o en Pregunta 2), aplicar esa indicación; **no** aplica para importar PyTorch/TensorFlow en ítems de P1.
+
+### Pregunta 1
+
+**Prohibido en todos los ítems de Pregunta 1** (sin excepción):
+
+- **NO** utilizar **PyTorch** (`torch`, `torch.nn`, `torch.optim`, autograd, etc.).
+- **NO** utilizar **TensorFlow** / **Keras** (`tensorflow`, `tf`, `keras`, etc.).
+- **NO** utilizar **JAX** ni otros frameworks de aprendizaje profundo con autograd u optimizadores integrados.
+
+No importar esas bibliotecas en celdas de P1, ni usarlas aunque sea “solo para comparar” o “solo para graficar”.
+
+**Permitido en Pregunta 1:**
+
+- Trabajo numérico con **SciPy** y **biblioteca estándar** de Python.
+- **NumPy** solo en lo inevitable para **arrays** (`numpy.ndarray`) y operaciones que SciPy usa o espera; priorizá **SciPy** cuando exista alternativa allí.
+- **Matplotlib** para los gráficos de la consigna de P1.
+
+**Implementación:**
+
+- El modelo y el entrenamiento de P1 deben hacerse **a mano** (gradientes, actualización de parámetros, etc.), sin APIs de alto nivel de frameworks de DL.
+
+### Pregunta 2
+
+- **PyTorch** está **permitido** en todos los ejercicios de la Pregunta 2 (EDA, preprocesamiento, MLP, entrenamiento, evaluación), incluidas APIs habituales del framework (`torch`, `torch.nn`, `torch.optim`, `DataLoader`, etc.), según la consigna.
+- Para el resto del stack de P2 (por ejemplo **pandas**, **scikit-learn**, **Matplotlib**), usá lo que pida el enunciado o lo ya adoptado en el notebook.
+- En Pregunta 2 **no** hace falta reimplementar a mano lo que la consigna pide resolver con PyTorch.
+
+### Otras dependencias
+
+- Si hace falta **cualquier otra dependencia** no cubierta arriba (paquete pip, módulo que no sea biblioteca estándar ni lo ya autorizado), **preguntar al usuario antes** si su uso está permitido; no agregarla ni recomendarla sin esa confirmación.
